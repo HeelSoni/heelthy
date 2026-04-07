@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Diet Food 3D"
+version = "1.0.0"
+id = "artifacts/diet-food"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24266
+
+[services.development]
+run = "pnpm --filter @workspace/diet-food run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/diet-food", "run", "build" ]
+publicDir = "artifacts/diet-food/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24266"
+BASE_PATH = "/"
