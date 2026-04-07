@@ -1,5 +1,5 @@
 {
   "buildCommand": "pnpm --filter \"@workspace/diet-food\" run build",
-  "outputDirectory": "artifacts/diet-food/dist/public",
+  "outputDirectory": "dist/public",
   "installCommand": "pnpm install"
 }
